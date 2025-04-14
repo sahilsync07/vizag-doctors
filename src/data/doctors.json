@@ -4,26 +4,29 @@
     "name": "Dr. Kanhu Charan Patro",
     "specialization": "Radiation Oncology",
     "experience": 15,
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/kanhu-charan-patro.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631650/kanhu-charan-patro_r12uao.jpg",
     "description": "Clinical Director with over 15 years of experience in radiation oncology.",
-    "featured": true
+    "featured": true,
+    "active": true
   },
   {
     "id": 2,
     "name": "Dr. Anuradha Reddy",
     "specialization": "Cardiologist",
     "experience": 12,
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/anuradha-reddy.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631650/anuradha-reddy_jh5fdl.jpg",
     "description": "Cardiologist with expertise in heart diseases and surgery.",
-    "featured": false
+    "featured": false,
+    "active": true
   },
   {
     "id": 3,
     "name": "Dr. Prakash Rao",
     "specialization": "Neurologist",
     "experience": 18,
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/prakash-rao.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631651/prakash-rao_wwlznn.avif",
     "description": "Renowned neurologist with vast experience in brain disorders.",
-    "featured": true
+    "featured": true,
+    "active": true
   }
 ]

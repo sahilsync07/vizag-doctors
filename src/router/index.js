@@ -6,6 +6,12 @@ import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
 import DoctorDetail from '../views/DoctorDetail.vue'
 import HospitalDetail from '../views/HospitalDetail.vue'
+import DoctorForm from '@/admin/components/DoctorForm.vue'
+import HospitalForm from '@/admin/components/HospitalForm.vue'
+import JsonEditor from '@/admin/components/JsonEditor.vue'
+import HospitalMaster from '@/admin/HospitalMaster.vue'
+import DoctorMaster from '@/admin/DoctorMaster.vue'
+import AdminDashboard from '@/admin/AdminDashboard.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -13,8 +19,12 @@ const routes = [
   { path: '/hospitals', component: Hospitals },
   { path: '/about', component: About },
   { path: '/contact', component: Contact },
-
-  // ✅ Dynamic Routes for Details
+  { path: '/admin', name: 'AdminDashboard', component: AdminDashboard },
+  { path: '/admin/doctors', name: 'DoctorFormPage', component: DoctorForm },
+  { path: '/admin/hospitals', name: 'HospitalForm', component: HospitalForm },
+  { path: '/admin/json-editor', component: JsonEditor },
+  { path: '/admin/hospital-master', name: 'HospitalMaster', component: HospitalMaster },
+  { path: '/admin/doctor-master', name: 'DoctorMaster', component: DoctorMaster },
   { path: '/doctors/:id', component: DoctorDetail, props: true },
   { path: '/hospitals/:id', component: HospitalDetail, props: true },
 ]

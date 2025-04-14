@@ -18,6 +18,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
+        process: 'readonly', // Allow process as a global variable in Node.js context
       },
     },
   },

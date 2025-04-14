@@ -3,24 +3,27 @@
     "id": 1,
     "name": "Mahatma Gandhi Cancer Hospital",
     "services": "Oncology, Surgery, Chemotherapy",
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/mahatma-gandhi-cancer-hospital.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631674/mahatma-gandhi-cancer-hospital_awxhm8.jpg",
     "description": "Renowned multi-specialty hospital in Vizag offering 24/7 emergency services.",
-    "featured": true
+    "featured": true,
+    "active": true
   },
   {
     "id": 2,
     "name": "Seven Hills Hospital",
     "services": "Cardiology, Neurology, Orthopedics",
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/seven-hills-hospital.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631675/seven-hills-hospital_hj8kk4.jpg",
     "description": "Premier healthcare facility known for multi-specialty care.",
-    "featured": false
+    "featured": false,
+    "active": true
   },
   {
     "id": 3,
     "name": "Apollo Hospitals Vizag",
     "services": "General Medicine, Surgery, Diagnostics",
-    "image": "https://cdn.jsdelivr.net/gh/sahilsync07/vizag-doctors/public/images/apollo-hospital.jpg",
+    "image": "https://res.cloudinary.com/dg365ewal/image/upload/v1744631672/apollo-hospital_jjd1c8.jpg",
     "description": "Top-tier hospital with expert doctors and advanced facilities.",
-    "featured": true
+    "featured": true,
+    "active": true
   }
 ]
