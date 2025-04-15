@@ -1,5 +1,7 @@
 import axios from 'axios'
-const BASE_URL = 'http://localhost:5000/api/doctors'
+// const BASE_URL = 'http://localhost:5000/api/doctors'
+const BASE_URL = 'https://vizag-doctors.onrender.com/api/doctors'
+// or
 
 export const getAllDoctors = async () => {
   try {

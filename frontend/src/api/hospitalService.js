@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:5000/api/hospitals'
+// const BASE_URL = 'http://localhost:5000/api/hospitals'
+const BASE_URL = 'https://vizag-doctors.onrender.com/api/hospitals'
 
 // Fetch all hospitals
 export const getAllHospitals = async () => {
