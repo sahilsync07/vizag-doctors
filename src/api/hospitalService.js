@@ -5,7 +5,7 @@ const BASE_URL = 'http://localhost:5000/api/hospitals'
 // Fetch all hospitals
 export const getAllHospitals = async () => {
   try {
-    const res = await axios.get(BASE_URL) // No dynamic parameter here, just the base URL for all hospitals
+    const res = await axios.get(BASE_URL)
     return res.data
   } catch (err) {
     console.error('Error fetching hospitals:', err)
@@ -13,14 +13,20 @@ export const getAllHospitals = async () => {
   }
 }
 
-// Fetch a hospital by ID (if you need this functionality)
-export const getHospitalById = async (id) => {
+// Update hospital's active or featured status
+export const updateHospitalById = async (id, updateData) => {
   try {
-    if (!id) throw new Error('ID is required') // Ensure ID is passed
-    const res = await axios.get(`${BASE_URL}/${id}`) // ID should be appended correctly
-    return res.data
+    await axios.put(`${BASE_URL}/${id}`, updateData)
   } catch (err) {
-    console.error('Error fetching hospital by ID:', err)
-    return null
+    console.error('Error updating hospital:', err)
+  }
+}
+
+// Delete a hospital by ID
+export const deleteHospitalById = async (id) => {
+  try {
+    await axios.delete(`${BASE_URL}/${id}`)
+  } catch (err) {
+    console.error('Error deleting hospital:', err)
   }
 }

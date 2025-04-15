@@ -20,7 +20,7 @@
       <!-- ✅ Featured Doctors -->
       <div
         v-for="doctor in featuredDoctors"
-        :key="'doctor-' + doctor.id"
+        :key="'doctor-' + doctor._id"
         class="w-full flex-shrink-0 bg-gray-100 flex justify-center p-6 h-full"
       >
         <div
@@ -38,7 +38,7 @@
             </p>
             <p class="text-sm text-gray-500 mt-2">{{ doctor.hospital }}</p>
             <router-link
-              :to="`/doctors/${doctor.id}`"
+              :to="`/doctors/${doctor._id}`"
               class="mt-3 inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               View Profile
@@ -50,7 +50,7 @@
       <!-- ✅ Featured Hospitals -->
       <div
         v-for="hospital in featuredHospitals"
-        :key="'hospital-' + hospital.id"
+        :key="'hospital-' + hospital._id"
         class="w-full flex-shrink-0 bg-gray-100 flex justify-center p-6 h-full"
       >
         <div
@@ -66,7 +66,7 @@
             <p class="text-gray-600 mt-1">{{ hospital.services }}</p>
             <p class="text-sm text-gray-500 mt-2">{{ hospital.location }}</p>
             <router-link
-              :to="`/hospitals/${hospital.id}`"
+              :to="`/hospitals/${hospital._id}`"
               class="mt-3 inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               View Profile
@@ -93,16 +93,16 @@
 </template>
 
 <script>
-import doctors from '@/data/doctors.json'
-import hospitals from '@/data/hospitals.json'
+import { getAllDoctors } from '@/api/doctorService'
+import { getAllHospitals } from '@/api/hospitalService'
 
 export default {
   name: 'Carousel',
   data() {
     return {
       currentIndex: 0,
-      doctors,
-      hospitals,
+      doctors: [],
+      hospitals: [],
     }
   },
   computed: {
@@ -117,6 +117,14 @@ export default {
     },
   },
   methods: {
+    async fetchData() {
+      try {
+        this.doctors = await getAllDoctors()
+        this.hospitals = await getAllHospitals()
+      } catch (err) {
+        console.error('Error loading data for carousel:', err)
+      }
+    },
     nextSlide() {
       this.currentIndex = (this.currentIndex + 1) % this.totalSlides
     },
@@ -127,10 +135,11 @@ export default {
       this.currentIndex = index
     },
     getImageUrl(path) {
-      return new URL(`${path}`, import.meta.url).href
+      return path.startsWith('http') ? path : new URL(`${path}`, import.meta.url).href
     },
   },
   mounted() {
+    this.fetchData()
     setInterval(() => {
       this.nextSlide()
     }, 4000)

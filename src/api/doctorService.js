@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 const BASE_URL = 'http://localhost:5000/api/doctors'
 
 export const getAllDoctors = async () => {
@@ -12,4 +11,18 @@ export const getAllDoctors = async () => {
   }
 }
 
-// Add more methods if needed later (like getById, updateDoctor etc.)
+export const updateDoctorById = async (id, updateData) => {
+  try {
+    await axios.put(`${BASE_URL}/${id}`, updateData)
+  } catch (err) {
+    console.error('Error updating doctor:', err)
+  }
+}
+
+export const deleteDoctorById = async (id) => {
+  try {
+    await axios.delete(`${BASE_URL}/${id}`)
+  } catch (err) {
+    console.error('Error deleting doctor:', err)
+  }
+}
